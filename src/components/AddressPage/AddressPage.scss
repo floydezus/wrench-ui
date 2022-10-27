@@ -1,0 +1,164 @@
+@import "src/variables";
+@import "src/mixins";
+
+.address-page {
+  padding: 32px;
+  width: 100%;
+  max-width: 100%;
+
+  &__results, &__search {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__search {
+    margin-bottom:  32px;
+  }
+
+  &__results {
+
+    box-shadow: 0 2px 8px rgba(2, 0, 97, 0.25);
+    border-radius: 10px;
+    padding: 24px;
+  }
+
+}
+
+.search {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  gap: 24px;
+  height: 70px;
+
+  &__input {
+
+    max-width: 835px;
+    width: 78%;
+    outline: none;
+    border: 3px solid $primary-ui-color;
+    border-radius: 10px;
+    color: #6C6C6C;
+    @include main-text;
+    padding: 23px 24px;
+  }
+
+  &__btn {
+
+    @include button-reset;
+    display: flex;
+    background-color: $primary-ui-color;
+    align-items: center;
+    width: 217px;
+    border-radius: 10px;
+    padding: 19px 40px;
+    max-height: 100%;
+    max-width: 100%;
+    gap: 16px;
+    transition: opacity .2s, scale .2s;
+
+  }
+
+  &__btn:hover {
+    opacity: .8;
+  }
+
+  &__btn:active {
+    transform: scale(.95);
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+
+  }
+
+  &__text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    color: #FFF;
+  }
+}
+
+.results {
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    padding: 24px 0;
+    @include main-text;
+    position: relative;
+  }
+
+  &__no-items {
+    @include main-text;
+  }
+
+  &__item:last-of-type {
+    padding-bottom: 0;
+  }
+
+  &__item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #D7D7D7;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .address-page {
+    padding: 28px;
+  }
+
+  .search {
+    height: 60px;
+  }
+  .search__input {
+    padding: 18px 20px;
+    font-size: 16px;
+  }
+
+  .search__btn {
+    width: 150px;
+    display: block;
+  }
+
+  .search__text {
+    visibility: hidden;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .search {
+    flex-direction: column;
+    align-items: center;
+
+    &__input {
+      width: 100%;
+    }
+  }
+
+  .results__item {
+    padding: 18px 0;
+    font-size: 16px;
+  }
+
+  .address-page__search {
+    margin-bottom:  132px;
+  }
+
+}
+

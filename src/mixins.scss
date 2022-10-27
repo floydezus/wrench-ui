@@ -1,0 +1,36 @@
+@import "variables";
+
+@mixin header-text {
+  color: $accent-text-color;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@mixin navbar-text {
+  color: $base-text-color;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@mixin main-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+@mixin button-reset {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+@mixin anchor-reset {
+  color: inherit;
+  text-decoration-line: none;
+}
+

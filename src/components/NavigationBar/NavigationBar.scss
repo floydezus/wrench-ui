@@ -1,0 +1,137 @@
+@import "src/variables";
+@import "src/mixins";
+
+@mixin tab-select {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: $primary-ui-color;
+  height: 37px;
+  right: -3px;
+  top: 0;
+  border-radius: 5px;
+  transform: translateY(50%);
+}
+
+.navbar {
+  height: 100vh;
+  min-width: 300px;
+  max-width: 300px;
+  padding-top: $header-height;
+  box-shadow: 0 0 5px rgba(2, 0, 96, 0.25);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 50px;
+
+  &__header {
+    @include navbar-text;
+    font-weight: 700;
+    padding: 24px 32px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__item.is-active:before {
+    @include tab-select;
+  }
+
+  &__item.navbar__item--children.is-active:before {
+    @include tab-select;
+    right: -35px;
+
+  }
+
+}
+
+.item {
+  @include anchor-reset;
+  display: flex;
+  align-items: center;
+  padding: 20px 32px;
+  transition: color .2s;
+}
+
+.item--complex {
+  align-items: flex-start;
+  position: relative;
+  flex-direction: column;
+}
+
+.item__parent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  //overflow: hidden;
+
+}
+
+@mixin arrow-menu {
+  content: '';
+  position: absolute;
+  right: -100px;
+  transform: translateY(25%);
+  background: url("arrow.svg") no-repeat;
+  width: 20px;
+  height: 100%;
+}
+
+
+.item__parent.is-open:before {
+  @include arrow-menu;
+}
+
+.item__parent.is-close:before {
+  @include arrow-menu;
+  transform: translateY(-40%) translateX(-10%) rotate(180deg);
+
+}
+
+.item__children {
+  //position: absolute;
+  transition: opacity 1s;
+}
+
+
+.item__icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+}
+
+.item__text {
+  @include navbar-text;
+}
+
+.item:not(.item--complex):hover {
+
+  .item__text {
+    color: $primary-ui-color;
+  }
+}
+
+.item__children.is-open {
+  opacity: 1;
+}
+
+.item__children.is-close {
+  display: none;
+  opacity: 0;
+}
+
+
+@media (max-width: 768px) {
+
+  .navbar {
+    display: none;
+  }
+
+}

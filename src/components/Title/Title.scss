@@ -1,0 +1,36 @@
+@import 'src/variables';
+@import 'src/mixins';
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: $base-text-color;
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  &__sub {
+    @include main-text;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 450px) {
+
+  .title {
+
+    font-size: 22px;
+    margin-bottom: 10px;
+
+    &__sub {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+  }
+
+}

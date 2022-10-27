@@ -1,0 +1,14 @@
+@import "src/variables";
+
+.main {
+  margin: 0 auto !important;
+  display: flex;
+}
+
+.main__content {
+  width: 100%;
+  background-color: $base-ui-color;
+  padding-top: $header-height;
+  height: 100%;
+}
+

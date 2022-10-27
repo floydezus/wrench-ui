@@ -1,0 +1,26 @@
+@import "src/variables";
+
+.header-page {
+  height: 80px;
+  background: $primary-ui-color;
+  position: fixed;
+  display: flex;
+  z-index: 10;
+  width: 100%;
+  max-width: 100%;
+
+  .header-page__container {
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+
+    .header-page__start {
+      margin-right: auto;
+    }
+
+    .header-page__end {
+      margin-left: auto;
+    }
+  }
+}
+

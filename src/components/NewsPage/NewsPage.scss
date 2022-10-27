@@ -1,0 +1,38 @@
+@import "src/mixins";
+
+.news-page {
+  padding: 32px;
+  width: 100%;
+  max-width: 100%;
+
+  &__text {
+    @include main-text;
+    color: #000000;
+    text-align: left;
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .news-page {
+    padding: 28px;
+  }
+
+  .news-page__text {
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .news-page {
+    padding: 24px;
+  }
+
+  .news-page__text {
+    font-size: 16px;
+  }
+
+}

@@ -1,0 +1,51 @@
+@import "src/mixins";
+
+.logo {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+
+  &__img {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__title {
+    @include header-text
+  }
+}
+
+@media (max-width: 768px) {
+
+  .logo {
+    gap: 12px;
+
+    &__img {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .logo {
+    gap: 10px;
+
+    &__img {
+      width: 32px;
+      height: 32px;
+    }
+
+    &__title {
+      font-size: 16px;
+    }
+  }
+
+}
